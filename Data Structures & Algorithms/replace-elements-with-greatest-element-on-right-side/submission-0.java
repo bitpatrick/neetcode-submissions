@@ -1,0 +1,17 @@
+class Solution {
+    public int[] replaceElements(int[] arr) {
+        int n = arr.length;
+
+        for (int i = 0; i < n - 1; i++) {
+            int indexOfMax = i + 1;
+            for (int j = i + 1; j < n; j++) {
+                if (arr[j] > arr[indexOfMax]) indexOfMax = j;
+            }
+            arr[i] = arr[indexOfMax];
+        }
+
+        arr[n - 1] = -1;
+
+        return arr;
+    }
+}
